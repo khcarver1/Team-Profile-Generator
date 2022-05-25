@@ -1,0 +1,79 @@
+* {
+    margin: 0px;
+}
+
+header {}
+
+#topheader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    height: 100px;
+    padding: auto;
+    color: white;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#card-top {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 0 40px 0;
+}
+#card-bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 0 40px 0;
+}
+#card-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    
+}
+#card1,#card2,#card3,#card4,#card5 {
+    text-align: center;
+    width: 250px;
+    height: 300px;
+    border: 1px solid black;
+    
+}
+
+#cardheader1,#cardheader2,#cardheader3,#cardheader4,#cardheader5 {
+    background-color: blue;
+    color: white;
+    height: 30%;
+    text-align: center;
+    
+}
+#cardcontent1,#cardcontent2,#cardcontent3,#cardcontent4,#cardcontent5 {
+    background-color: whitesmoke;
+    text-align: center;
+    height: 210px;
+    
+}
+#cardlist1,#cardlist2,#cardlist3,#cardlist4,#cardlist5 {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    color: black;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+
+    
+}
+#contentitem1,#contentitem2,#contentitem3 {
+    margin: 10px 0 10px 0;
+    border: 1px solid black;    
+    background-color: white;
+}
+
+
+
+
