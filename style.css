@@ -8,56 +8,82 @@ header {}
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    background-color: #ff4e4e;
     height: 100px;
     padding: auto;
     color: white;
 }
+
 section {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
 #card-top {
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 40px 0 40px 0;
 }
+
 #card-bottom {
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 40px 0 40px 0;
 }
+
 #card-container {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    
+
 }
-#card1,#card2,#card3,#card4,#card5 {
+
+#card1,
+#card2,
+#card3,
+#card4,
+#card5 {
     text-align: center;
     width: 250px;
     height: 300px;
-    border: 1px solid black;
-    
+    box-shadow: 10px 20px 20px black;
 }
 
-#cardheader1,#cardheader2,#cardheader3,#cardheader4,#cardheader5 {
-    background-color: blue;
+#cardheader1,
+#cardheader2,
+#cardheader3,
+#cardheader4,
+#cardheader5 {
+    background-color: #4486c6;
     color: white;
     height: 30%;
-    text-align: center;
-    
+    display: flex;
+    justify-content: space-around;
+    align-items: self-start;
+    flex-direction: column;
+    padding-left: 15px;
+    font-size: 20px;
 }
-#cardcontent1,#cardcontent2,#cardcontent3,#cardcontent4,#cardcontent5 {
+
+#cardcontent1,
+#cardcontent2,
+#cardcontent3,
+#cardcontent4,
+#cardcontent5 {
     background-color: whitesmoke;
     text-align: center;
     height: 210px;
-    
+
 }
-#cardlist1,#cardlist2,#cardlist3,#cardlist4,#cardlist5 {
+
+#cardlist1,
+#cardlist2,
+#cardlist3,
+#cardlist4,
+#cardlist5 {
     display: flex;
     flex-direction: column;
     background-color: whitesmoke;
@@ -66,14 +92,17 @@ section {
     text-align: center;
     justify-content: center;
 
-    
+
 }
-#contentitem1,#contentitem2,#contentitem3 {
-    margin: 10px 0 10px 0;
-    border: 1px solid black;    
+
+#contentitem1,
+#contentitem2,
+#contentitem3 {
+    border: 1px solid black;
     background-color: white;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 15px;
+    padding: 10px 0 10px 5px;
+    text-align: left;
 }
-
-
-
-
