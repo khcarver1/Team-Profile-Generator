@@ -5,13 +5,14 @@ const { title } = require('process');
 // let menuAnswers = "";
 let addOrContinueGlobal = "";
 let menuAnswersGlobal = "";
-let empType = "";
-
-
+let engrAnswers1Global = "";
+let engrAnswers2Global = "";
+let engrAnswers3Global = "";
+let internAnswersGlobal = "";
 inquirer.prompt([
     {
         type: 'input',
-        name: 'mgrsName',
+        name: 'teamMgrName',
         message: 'What is the team managers name?'
     },
     {
@@ -33,52 +34,127 @@ inquirer.prompt([
         type: 'list',
         name: 'addOrContinue',
         message: 'Please choose an option: ',
-        choices: ['Engineer', 'Intern', 'Finish building my team']
+        choices: ['Engineer 1', 'Engineer 2', 'Engineer 3', 'Intern', 'Finish building my team']
     },
 
 ]).then(menuAnswers => {
     // menuAnswers = menuAnswers;
+    console.log(addOrContinueGlobal);
     addOrContinueGlobal = menuAnswers.addOrContinue;
     menuAnswersGlobal = menuAnswers;
     checkForAnswer();
 })
-function engrQuestions() {
+function engrQuestions1() {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'engrName',
+            name: 'engr1Name',
             message: 'What is the engineers name?'
         },
         {
             type: 'input',
-            name: 'engrrId',
-            message: "What is the ?"
+            name: 'engr1Id',
+            message: "What is ID for engineer 1?"
         },
         {
             type: 'input',
-            name: 'engrEmail',
+            name: 'engr1Email',
             message: 'What is their email address?'
         },
         {
             type: 'input',
-            name: 'engrGh',
+            name: 'engr1Gh',
             message: 'What is their GitHub username?'
         },
 
-    ]).then(engrAnswers => {
-        console.log(engrAnswers);
+    ]).then(engrAnswers1 => {
+        engrAnswers1Global = engrAnswers1;
         inquirer.prompt([
             {
                 type: 'list',
                 name: 'addOrContinue',
                 message: 'Please choose an option: ',
-                choices: ['Engineer', 'Intern', 'Finish building my team']
+                choices: ['Engineer 1', 'Engineer 2', 'Engineer 3', 'Intern', 'Finish building my team']
             },
 
         ]).then(menuAnswers => {
-            // menuAnswers = menuAnswers;
             addOrContinueGlobal = menuAnswers.addOrContinue;
+            checkForAnswer();
+        })
+    })
+};
+function engrQuestions2() {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'engr2Name',
+            message: 'What is the engineers name?'
+        },
+        {
+            type: 'input',
+            name: 'engr2Id',
+            message: "What is the ID for engineer 2?"
+        },
+        {
+            type: 'input',
+            name: 'engr2Email',
+            message: 'What is their email address?'
+        },
+        {
+            type: 'input',
+            name: 'engr2Gh',
+            message: 'What is their GitHub username?'
+        },
 
+    ]).then(engrAnswers2 => {
+        engrAnswers2Global = engrAnswers2;
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'addOrContinue',
+                message: 'Please choose an option: ',
+                choices: ['Engineer 1', 'Engineer 2', 'Engineer 3', 'Intern', 'Finish building my team']
+            },
+
+        ]).then(menuAnswers => {
+            addOrContinueGlobal = menuAnswers.addOrContinue;
+            checkForAnswer();
+        })
+    })
+};
+function engrQuestions3() {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'engr3Name',
+            message: 'What is the engineers name?'
+        },
+        {
+            type: 'input',
+            name: 'engr3Id',
+            message: "What is the ID for engineer 3?"
+        },
+        {
+            type: 'input',
+            name: 'engr3Email',
+            message: 'What is their email address?'
+        },
+        {
+            type: 'input',
+            name: 'engr3Gh',
+            message: 'What is their GitHub username?'
+        },
+    ]).then(engrAnswers3 => {
+        engrAnswers3Global = engrAnswers3;
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'addOrContinue',
+                message: 'Please choose an option: ',
+                choices: ['Engineer 1', 'Engineer 2', 'Engineer 3', 'Intern', 'Finish building my team']
+            },
+        ]).then(menuAnswers => {
+            addOrContinueGlobal = menuAnswers.addOrContinue;
             checkForAnswer();
         })
     })
@@ -87,28 +163,33 @@ function internQuestions() {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'internsName',
+            name: 'internName',
             message: 'What is the interns name?'
         },
         {
             type: 'input',
-            name: 'internrId',
+            name: 'internId',
             message: "What is the interns ID?"
         },
         {
             type: 'input',
-            name: 'internsEmail',
+            name: 'internEmail',
             message: 'What is their email address?'
         },
+        {
+            type: 'input',
+            name: 'internSchool',
+            message: 'What school did the intern attend?'
+        },
     ]).then(internAnswers => {
+        internAnswersGlobal = internAnswers;
         empType = "Intern";
-        console.log(internAnswers);
         inquirer.prompt([
             {
                 type: 'list',
                 name: 'addOrContinue',
                 message: 'Please choose an option: ',
-                choices: ['Engineer', 'Intern', 'Finish building my team']
+                choices: ['Engineer 1', 'Engineer 2', 'Engineer 3', 'Intern', 'Finish building my team']
             },
 
         ]).then(menuAnswers => {
@@ -144,7 +225,7 @@ function buildHtml() {
             <div id="card-container">
                 <div id="card1">
                     <div id="cardheader1">
-                        <h2>${menuAnswersGlobal.mgrName}</h2>
+                        <h2>${menuAnswersGlobal.teamMgrName}</h2>
                         <h3>Manager<h3>
                     </div>
                     <div id="cardcontent1">
@@ -156,26 +237,28 @@ function buildHtml() {
                     </div>
                 </div>
                 <div id="card2">
-                    <div id="cardheader2">
-                        <h2></h2>
+                    <div id="cardheader1">
+                        <h2>${engrAnswers1Global.engr1Name}</h2>
+                        <h3>Engineer<h3>
                     </div>
-                    <div id="cardcontent2">
-                        <div id="cardlist2">
-                            <p id="contentitem1">card content</p>
-                            <p id="contentitem2">card content</p>
-                            <p id="contentitem3">card content</p>
+                    <div id="cardcontent1">
+                        <div id="cardlist1">
+                            <p id="contentitem1">ID: ${engrAnswers1Global.engr1Id}</p>
+                            <p id="contentitem2">Email: ${engrAnswers1Global.engr1Email}</p>
+                            <p id="contentitem3">Github: ${engrAnswers1Global.engr1Gh}</p>
                         </div>
                     </div>
                 </div>
-                <div id="card3">
-                    <div id="cardheader3">
-                        <h2></h2>
+                <div id="card2">
+                    <div id="cardheader1">
+                        <h2>${engrAnswers2Global.engr2Name}</h2>
+                        <h3>Engineer<h3>
                     </div>
-                    <div id="cardcontent3">
-                        <div id="cardlist3">
-                            <p id="contentitem1">card content</p>
-                            <p id="contentitem2">card content</p>
-                            <p id="contentitem3">card content</p>
+                    <div id="cardcontent1">
+                        <div id="cardlist1">
+                            <p id="contentitem1">ID: ${engrAnswers2Global.engr2Id}</p>
+                            <p id="contentitem2">Email: ${engrAnswers2Global.engr2Email}</p>
+                            <p id="contentitem3">Github: ${engrAnswers2Global.engr2Gh}</p>
                         </div>
                     </div>
                 </div>
@@ -183,13 +266,31 @@ function buildHtml() {
         </div>
         <div id="card-bottom">
             <div id="card-container">
-                <div id="card4">
-                    <h2>four</h2>
-                    <p>card content</p>
+                <div id="card2">
+                    <div id="cardheader1">
+                        <h2>${engrAnswers3Global.engr3Name}</h2>
+                        <h3>Engineer<h3>
+                    </div>
+                    <div id="cardcontent1">
+                        <div id="cardlist1">
+                            <p id="contentitem1">ID: ${internAnswersGlobal.internName}</p>
+                            <p id="contentitem2">Email: ${engrAnswers3Global.engr3Email}</p>
+                            <p id="contentitem3">Github: ${engrAnswers3Global.engr3Gh}</p>
+                        </div>
+                    </div>
                 </div>
-                <div id="card5">
-                    <h2>five</h2>
-                    <p>card content</p>
+                <div id="card2">
+                    <div id="cardheader1">
+                        <h2>${internAnswersGlobal.internName}</h2>
+                        <h3>Intern<h3>
+                    </div>
+                    <div id="cardcontent1">
+                        <div id="cardlist1">
+                            <p id="contentitem1">ID: ${internAnswersGlobal.internId}</p>
+                            <p id="contentitem2">Email: ${internAnswersGlobal.internEmail}</p>
+                            <p id="contentitem3">School: ${internAnswersGlobal.internSchool}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,15 +304,26 @@ function buildHtml() {
 }
 
 function checkForAnswer() {
-    if (addOrContinueGlobal === "Engineer") {
-        engrQuestions();
-    } else if (addOrContinueGlobal === "Intern") {
-        internQuestions();
-    } else {
-        buildHtml();
-        console.log("Success!");
-        console.log(menuAnswersGlobal.mgrEmail);
+    if (addOrContinueGlobal === "Engineer 1") {
+        engrQuestions1()
     }
 
-}
+    if (addOrContinueGlobal === "Engineer 2") {
+        engrQuestions2()
+    }
 
+    if (addOrContinueGlobal === "Engineer 3") {
+        engrQuestions3()
+    }
+    if (addOrContinueGlobal === "Intern") {
+        internQuestions()
+    }
+    if (addOrContinueGlobal === "Finish building my team") {
+        console.log("success!")
+        console.log(engrAnswers1Global)
+        buildHtml()
+
+    }
+
+
+}
