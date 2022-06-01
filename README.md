@@ -14,4 +14,4 @@ run by invoking node index
 ## credits
 the last few brain cells I have put this thing together, thank you brain cells.
 
-image.png
+![image](https://user-images.githubusercontent.com/97691873/171433888-20512b99-28c3-4435-92f8-9d129d23a360.png)
